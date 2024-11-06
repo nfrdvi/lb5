@@ -1,0 +1,80 @@
+body {
+    background-color: rgba(132, 30, 132, 0.778);
+    color: rgb(255, 240, 240);
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 2px ridge rgb(153, 50, 204);
+    padding-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: rgba(236, 229, 238, 0.979);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table,td,tr,th {
+    border-collapse: collapse;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    height: 250px;
+}
+
+tr:nth-child(odd) {
+    background-color: rgba(237, 104, 128, 0.768);
+}
+
+tr:nth-child(even) {
+    background-color: rgba(169, 97, 237, 0.329);
+}
+
+th {
+    text-align: left;
+    background-color: rgba(33, 61, 175, 0.651);
+}
+
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+th,td {
+    padding: 10px;
+}
+
+caption {
+    font-size: 30px;
+}
+
+tr:hover {
+    background-color: rgba(115, 79, 248, 0.888);
+}
+
+.button {
+    background: rgb(118, 15, 156);
+    border: 2px solid rgb(91, 37, 146);
+    border-radius: 2px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+.c-button:hover {
+    background-color: rgba(63, 63, 213, 0.892);
+}

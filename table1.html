@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Лабораторная работа 5</title>
+    <link rel="stylesheet" href="./table.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <a href="./index2.html">Основная страница</a>
+        <a href="./page2.html">Позиционирование элементов</a>
+        <a href="./table.html">Таблица</a>
+    </div>
+
+    <div class="table">
+        <table id="table">
+            <caption>Студенты 1 курса</caption>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>ФИО студента</th>
+                    <th>Номер зачётной книжки</th>
+                    <th>Номер группы</th>
+                    <th>Пол</th>
+                    <th>Возраст</th>
+                    <th>Форма поступления</th>
+                    <th>Название направления</th>
+                </tr>
+            </thead>
+            <tbody id="dataTableBody">
+                <tr>
+                    <td>01</td>
+                    <td>Смирнова Арина Степановна</td>
+                    <td>2024001</td>
+                    <td>44</td>
+                    <td>Ж</td>
+                    <td>20</td>
+                    <td>заочная</td>
+                    <td>ИБ</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Лазарева Полина Фёдоровна</td>
+                    <td>2024002</td>
+                    <td>41</td>
+                    <td>Ж</td>
+                    <td>19</td>
+                    <td>очная</td>
+                    <td>ИБ</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Авдеев Евгений Александрович</td>
+                    <td>2024003</td>
+                    <td>43</td>
+                    <td>М</td>
+                    <td>18</td>
+                    <td>очная</td>
+                    <td>ИБ</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Баранова Мия Арсентьевна</td>
+                    <td>2024004</td>
+                    <td>42</td>
+                    <td>Ж</td>
+                    <td>18</td>
+                    <td>очная</td>
+                    <td>ИБ</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Беляков Марк Артемьевич</td>
+                    <td>2024005</td>
+                    <td>43</td>
+                    <td>М</td>
+                    <td>19</td>
+                    <td>очная</td>
+                    <td>ИБ</td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>Соколов Степан Юрьевич</td>
+                    <td>2024006</td>
+                    <td>44</td>
+                    <td>М</td>
+                    <td>20</td>
+                    <td>заочная</td>
+                    <td>ИБ</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form id="form">
+        <br><label for="ID">ID</label><br>
+        <input type="text" id="ID" name="ID"><br><br>
+
+        <label for="name">ФИО(полностью)</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="namber1">Номер зачетной книжки</label><br>
+        <input type="text" id="namber1" name="namber1"><br><br>
+
+        <label for="namber2">Номер группы</label><br>
+        <input type="text" id="namber2" name="namber2"><br><br>
+
+        <label for="gender">Ваш пол</label><br>
+        <select id="gender" name="gender">
+            <option value="Ж">Ж</option>
+            <option value="М">М</option>
+        </select><br><br>
+
+        <label for="age">Возраст</label><br>
+        <input type="text" id="age" name="age">
+
+        <p>Форма поступления</p>
+        <input type="radio" id="var1" name="forma" value="очная">
+        <label for="var1">очная</label><br>
+        <input type="radio" id="var2" name="forma" value="заочная">
+        <label for="var2">заочная</label><br>
+        <input type="radio" id="var3" name="forma" value="очно-заочная">
+        <label for="var3">очно-заочная</label><br><br>
+
+        <label for="name_n">Название направления</label><br>
+        <input type="text" id="name_n" name="name_n"><br><br>
+
+        <input type="submit" value="Отправить данные" class="button"><br>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $('#form').on('submit', function (event) {
+                event.preventDefault();
+
+                var id = $('#ID').val();
+                var name = $('#name').val();
+                var namber1 = $('#namber1').val();
+                var namber2 = $('#namber2').val();
+                var gender = $('#gender').val();
+                var age = $('#age').val();
+                var forma = $('input[name="forma"]:checked').val();
+                var name_n = $('#name_n').val();
+
+                $('#dataTableBody').append('<tr><td>' + id + '</td><td>' + name + '</td><td>' + namber1 +
+                    '</td><td>' + namber2 + '</td><td>' + gender + '</td><td>' + age + '</td><td>' + forma +
+                    '</td><td>' + name_n + '</td></tr>');
+
+                $(this).trigger('reset');
+            });
+        });
+    </script>
+</body>
+
+</html>
